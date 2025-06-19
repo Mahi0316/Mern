@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stone Paper Scissor Game</title>
+    <style>
+        button { margin: 10px; padding: 10px 20px; font-size: 16px; }
+        #result { margin-top: 20px; font-size: 18px; }
+        #gif { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Stone Paper Scissor</h2>
+    <button onclick="play('stone')">Stone</button>
+    <button onclick="play('paper')">Paper</button>
+    <button onclick="play('scissor')">Scissor</button>
+    <div id="result"></div>
+    <div id="gif"></div>
+
+    <script>
+        function play(userChoice) {
+            const choices = ['stone', 'paper', 'scissor'];
+            const computerChoice = choices[Math.floor(Math.random() * 3)];
+            let result = '';
+            let gifHTML = '';
+
+            if (userChoice === computerChoice) {
+                result = "It's a draw!";
+                gifHTML = `<img src="https://media.tenor.com/eefhAu3du-UAAAAM/good-morning.gif" alt="Draw" width="250">`;
+            } else if (
+                (userChoice === 'stone' && computerChoice === 'scissor') ||
+                (userChoice === 'paper' && computerChoice === 'stone') ||
+                (userChoice === 'scissor' && computerChoice === 'paper')
+            ) {
+                result = "You win!";
+                gifHTML = `<img src="https://i.pinimg.com/originals/88/14/9b/88149b0400750578f4d07d9bc3fb0fee.gif" alt="You win" width="250">`;
+            } else {
+                result = "You lose!";
+                gifHTML = `<img src="https://i.pinimg.com/originals/4e/e8/07/4ee807eb03d4dd3cd511f2a2a31238c4.gif" alt="You lose" width="250">`;
+            }
+
+            document.getElementById('result').innerHTML =
+                `You chose <b>${userChoice}</b>.<br>
+                 Computer chose <b>${computerChoice}</b>.<br>
+                 <b>${result}</b>`;
+
+            document.getElementById('gif').innerHTML = gifHTML;
+        }
+    </script>
+</body>
+</html>
