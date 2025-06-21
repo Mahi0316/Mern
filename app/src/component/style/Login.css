@@ -1,0 +1,38 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  background-color: #000000;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.login-box {
+  background-color: #000000;
+  padding: 40px 30px;
+  text-align: center;
+  width: 300px;
+}
+
+.login-box img {
+  width: 100px;
+  margin: 20px 0;
+}
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 10px;
+  background-color: #545454;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.login-box h1 {
+  color: white;
+}
